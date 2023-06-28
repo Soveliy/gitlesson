@@ -1,173 +1,149 @@
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    /* height: 800px; */
-    border: 1px solid red;
-}
-
-.row {
-    /* height: 100%;
-    display: flex; */
+.flex {
+    height: 500px;
+    border: 1px solid;
+    /* display: flex; */
     /* justify-content: space-between; */
     /* justify-content: center; */
-    /* justify-content: flex-end; */
     /* justify-content: space-around; */
     /* justify-content: space-evenly; */
-
-    /* align-items: stretch; */
     /* align-items: center; */
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    /* flex-direction: column; */
+    flex-direction: column-reverse;
+    flex-direction: row-reverse;
+    /* flex-wrap: wrap-reverse; */
+    display: grid;
 
-    /* align-items: flex-end;
-    flex-wrap: nowrap; */
-    /* Запрещается перенос 
-    на следующую строаку */
-    /* flex-wrap: wrap; */
-}
-
-.block {
-    width: 50%;
-    height: 300px;
-}
-
-.block.block--1 {
-    background-color: red;
-    height: 500px;
-}
-
-.block--2 {
-    background-color: blue;
-}
-
-.block--3 {
-    background-color: orange;
-}
-
-
-
-/* .clear {
-    clear: both;
-} */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -10px;
-}
-
-.item-container {
-    width: 250px;
-    padding: 10px;
-    box-sizing: border-box;
+    grid-template-columns: repeat(5, 1fr 2fr);
+    /* grid-template-rows: 200px 400px 200px; */
+    gap: 10px 20px
 }
 
 .item {
-    background-color: red;
-    height: 300px;
-    transition: opacity .5s, background-color 1s;
-    transition-delay: 1s;
-}
-
-.item:hover {
-    cursor: pointer;
-    background-color: green;
-    opacity: .5;
-}
-
-
-.element {
-    height: 500px;
-    width: 500px;
-    background-color: red;
-    transition: .5s;
-    opacity: 0;
-
-}
-
-.anim {
-    height: 500px;
-    width: 500px;
-    background-color: chocolate;
-    animation: rotating 10s ease-in-out infinite;
-
-}
-
-.anim:hover .element {
-    transform: translateX(500px);
-    opacity: 1;
-}
-
-
-@keyframes rotating {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-
-table {
-    margin: 500px 0;
-    border-spacing: 0;
-}
-
-td,
-th {
-    border: 1px solid blue;
-}
-
-.header,
-.menu {
-    background-color: rgb(136, 136, 136);
-    height: 150px;
-}
-
-.menu {
-    margin: 20px 0;
-}
-
-.side-bar-block {
-    height: 150px;
-    background-color: rgba(123, 162, 123, .3);
-}
-
-.main-row {
-    display: flex;
-}
-
-
-.main-content-block {
-    height: 150px;
-    background-color: brown;
-}
-
-.side-bar {
-    width: 300px;
-    margin-right: 30px;
-}
-
-.main-content {
-    width: 100%;
-    background-color: orange;
-    padding: 15px;
+    /* height: 200px;
+    width: 200px; */
+    padding: 10px;
     box-sizing: border-box;
+    min-width: 1px;
 }
 
-.side-bar-right {
-    width: 150px;
-    margin-left: 30px;
-    background-color: red;
+.item-1 {
+    /* flex-shrink: 0; */
+    background-color: brown;
+    /* order: 1; */
+    height: 200px;
 }
 
-.overflow {
+.item-2 {
+    align-self: flex-end;
+    height: 400px;
+    background-color: yellow;
+
+}
+
+.item-3 {
+    height: 300px;
+    order: -1;
+    background-color: cadetblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 96%;
+}
+
+.header__row {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid grey;
+}
+
+.header-left__icon,
+.header__right-icon {
+    width: 50px;
+    height: 50px;
+    background-color: grey;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.header__right,
+.header-left {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.header-left__icon {
+    margin-right: 10px
+}
+
+.header__right-icon {
+    margin-left: 10px;
+}
+
+.main {
+    display: flex;
+    padding-top: 20px;
+}
+
+.menu {
+    background-color: grey;
+    width: 300px;
     height: 500px;
-    width: 500px;
-    margin: 1000px auto 0;
-    background-color: aqua;
+    flex-shrink: 0;
+    margin-right: 25px;
+}
+
+.post-item {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
 
 
-    /* overflow: auto; */
+.post-item>div {
 
+    /* Селектор применяется только к детям .post-item */
+    display: flex;
+    align-items: center;
+}
 
+.post-item__center {
+    margin: 0 20px 0 10%;
 }
